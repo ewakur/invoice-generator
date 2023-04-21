@@ -1,0 +1,30 @@
+<h3>Generate new invoice</h3>
+<form [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" formControlName="name">
+    <mat-error>
+      Please enter name
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Count</mat-label>
+    <input matInput formControlName="count">
+    <mat-error>
+      Please enter count
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price">
+    <mat-error>
+      Please enter count
+    </mat-error>
+  </mat-form-field>
+  <button mat-icon-button aria-label="Remove invoice" type="button" color="warn" matTooltip="Remove invoice">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+  <button mat-button type="button" (click)="addInvoice()">+ Add new invoice</button>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
