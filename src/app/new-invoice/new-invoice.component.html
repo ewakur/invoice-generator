@@ -5,22 +5,46 @@
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput placeholder="Name" formControlName="name">
-        <mat-error>
+        <mat-error *ngIf="invoice.get('name')?.hasError('required')">
           Please enter name
+        </mat-error>
+        <mat-error *ngIf="invoice.get('name')?.hasError('minlength')">
+          Min. length 3
+        </mat-error>
+        <mat-error *ngIf="invoice.get('name')?.hasError('maxlength')">
+          Max. length 30
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Count</mat-label>
         <input matInput formControlName="count">
-        <mat-error>
+        <mat-error *ngIf="invoice.get('count')?.hasError('required')">
           Please enter count
+        </mat-error>
+        <mat-error *ngIf="invoice.get('count')?.hasError('min')">
+          Please enter min. 1
+        </mat-error>
+        <mat-error *ngIf="invoice.get('count')?.hasError('max')">
+          Please enter max. 100
+        </mat-error>
+        <mat-error *ngIf="invoice.get('count')?.hasError('pattern')">
+          Please enter intiger
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Price</mat-label>
         <input matInput formControlName="price">
-        <mat-error>
-          Please enter count
+        <mat-error *ngIf="invoice.get('price')?.hasError('required')">
+          Please enter price
+        </mat-error>
+        <mat-error *ngIf="invoice.get('price')?.hasError('min')">
+          Please enter min. 1
+        </mat-error>
+        <mat-error *ngIf="invoice.get('price')?.hasError('max')">
+          Please enter max. 1000000
+        </mat-error>
+        <mat-error *ngIf="invoice.get('price')?.hasError('pattern')">
+          Please enter intiger
         </mat-error>
       </mat-form-field>
       <button mat-icon-button aria-label="Remove invoice" type="button" color="warn" matTooltip="Remove invoice" (click)="removeInvoice(i)">

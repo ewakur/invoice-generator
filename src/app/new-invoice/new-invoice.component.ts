@@ -14,14 +14,14 @@ export class NewInvoiceComponent {
 
   private invoiceFormGroup(): FormGroup {
     return new FormGroup({
-      'name': new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
-      'count': new FormControl(null, [Validators.required, Validators.min(1), Validators.max(100), Validators.pattern('^[0-9]+$')]),
-      'price': new FormControl(null, [Validators.required, Validators.min(1), Validators.max(1000000), Validators.pattern('^[0-9]+$')])
+      'name': new FormControl<string>('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]),
+      'count': new FormControl<number>(1, [Validators.required, Validators.min(1), Validators.max(100), Validators.pattern('^[0-9]+$')]),
+      'price': new FormControl<number>(0, [Validators.required, Validators.min(1), Validators.max(1000000), Validators.pattern('^[0-9]+$')])
     });
   }
 
   onSubmit() {
-    console.log(this.invoiceForm.value);
+    console.log(this.invoiceForm);
   }
 
   get controls(): AbstractControl[] {
