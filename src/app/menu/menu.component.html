@@ -1,9 +1,10 @@
 <mat-toolbar>
   <span class="app-title">Invoice Generator</span>
-  <a mat-button routerLinkActive="active" routerLink="/new-invoice"
-    >New Invoice</a
+  <div><a mat-button routerLinkActive="active" routerLink="/new-invoice"
+  >New Invoice</a
   >
-  <a mat-button routerLinkActive="active" routerLink="/preview-invoice" (click)="resetInvoiceStorage()"
+    <a mat-button routerLinkActive="active" routerLink="/preview-invoice" (click)="resetInvoiceStorage()"
     >Preview Invoice</a
-  >
+    ></div>
+
 </mat-toolbar>
