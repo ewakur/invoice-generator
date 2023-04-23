@@ -1,0 +1,21 @@
+.mat-divider {
+  margin: 1rem 0;
+}
+
+table {
+  border-collapse: collapse;
+
+  th {
+    background-color: #e1e1e1;
+  }
+
+  th, td {
+    border: 1px solid #cfcfcf;
+    min-width: 6rem;
+    padding: 0.5rem;
+  }
+
+  .right-align {
+    text-align: right;
+  }
+}

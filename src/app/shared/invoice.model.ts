@@ -1,7 +1,5 @@
-export class Invoice {
-  constructor(
-    public name: string,
-    public count: number,
-    public price: number
-  ) {}
+export interface Invoice {
+  name: string;
+  count: number;
+  price: number;
 }

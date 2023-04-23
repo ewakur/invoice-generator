@@ -13,10 +13,7 @@ import { InvoicesStorageService } from '../shared/invoices-storage.service';
 export class PreviewInvoiceComponent implements OnInit, OnDestroy {
   private onDestroy$: Subject<void> = new Subject<void>();
   public company: Company = { name: '', address: '', phones: [] };
-  invoices: Invoice[] = [
-    new Invoice('aaa', 10, 100),
-    new Invoice('aba', 100, 10),
-  ];
+  public invoices: Invoice[] = [];
 
   constructor(
     private companyDataService: CompanyDataService,
@@ -30,11 +27,10 @@ export class PreviewInvoiceComponent implements OnInit, OnDestroy {
       .subscribe((companyData: Company) => {
         this.company = companyData;
       });
-    console.log(this.invoicesStorage.invoices);
     this.invoices = this.invoicesStorage.invoices;
   }
 
-  sumInvoices(): number {
+  public sumInvoices(): number {
     let sumInvoices: number = 0;
     this.invoices.map((invoice: Invoice) => {
       sumInvoices += invoice.count * invoice.price;
