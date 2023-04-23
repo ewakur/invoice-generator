@@ -1,0 +1,12 @@
+.mat-mdc-form-field {
+  margin-bottom: 1.4rem;
+  margin-right: 0.2rem;
+
+  .mat-mdc-form-field-bottom-align::before {
+    display: none;
+  }
+}
+
+.submit-btn {
+  margin: 0.7rem 0;
+}

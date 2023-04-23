@@ -1,0 +1,18 @@
+<mat-error *ngIf="formControlInputErrors?.['required']">
+  Please enter price
+</mat-error>
+<mat-error *ngIf="formControlInputErrors?.['min']">
+  Min. {{formControlInputErrors?.['min'].min}}
+</mat-error>
+<mat-error *ngIf="formControlInputErrors?.['max']">
+  Max. {{formControlInputErrors?.['max'].max}}
+</mat-error>
+<mat-error *ngIf="formControlInputErrors?.['pattern']">
+  Please input number
+</mat-error>
+<mat-error *ngIf="formControlInputErrors?.['minlength']">
+  Min. length {{formControlInputErrors?.['minlength'].requiredLength}}
+</mat-error>
+<mat-error *ngIf="formControlInputErrors?.['maxlength']">
+  Max. length {{formControlInputErrors?.['maxlength'].requiredLength}}
+</mat-error>

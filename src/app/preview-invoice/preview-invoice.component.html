@@ -1,1 +1,27 @@
-<p>preview-invoice works!</p>
+<div>
+  <h3>{{ company.name }}</h3>
+  <h4>{{ company.address }}</h4>
+  <p>Phones: {{ company.phones.join(", ") }}</p>
+</div>
+<mat-divider></mat-divider>
+<table *ngIf="invoices.length; else elseBlock">
+  <tr>
+    <th>#</th>
+    <th>Item</th>
+    <th>Count</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let invoice of invoices; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ invoice.name }}</td>
+    <td>{{ invoice.count }}</td>
+    <td>{{ invoice.price }}</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="right-align">Sum: {{ sumInvoices() }}</td>
+  </tr>
+</table>
+
+<ng-template #elseBlock>
+  <span>No items</span>
+</ng-template>
