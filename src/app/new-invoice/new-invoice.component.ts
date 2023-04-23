@@ -48,7 +48,7 @@ export class NewInvoiceComponent {
     });
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.invoiceForm.valid && this.invoiceForm.value['invoice'].length) {
       this.invoicesStorage.invoices = this.invoiceForm.value['invoice'];
       this.router.navigate(['/preview-invoice']);
