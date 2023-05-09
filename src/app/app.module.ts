@@ -16,7 +16,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
 import { ErrorHandleComponent } from './new-invoice/error-handle/error-handle.component';
 
@@ -25,7 +24,6 @@ import { ErrorHandleComponent } from './new-invoice/error-handle/error-handle.co
     AppComponent,
     MenuComponent,
     NewInvoiceComponent,
-    PreviewInvoiceComponent,
     ErrorHandleComponent,
   ],
   imports: [
@@ -41,7 +39,6 @@ import { ErrorHandleComponent } from './new-invoice/error-handle/error-handle.co
     MatTooltipModule,
     MatSnackBarModule,
     HttpClientModule,
-    MatDividerModule,
     MatTableModule,
   ],
   providers: [],
